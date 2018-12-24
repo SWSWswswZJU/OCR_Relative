@@ -1,4 +1,4 @@
-
+# General Python Function
 import cv2
 import numpy as np
 import os
@@ -42,7 +42,11 @@ def file_name(file_dir):
                 L.append(os.path.join(root, file))
     return L
 
-# 加载正样本
+# =================================================
+# 加载样本，file_dir文件夹中".bmp"文件全部加载至List中
+# input : file_dir
+# output :
+# =================================================
 def get_samples(file_dir):
     imgs = []
     L = []
@@ -51,34 +55,10 @@ def get_samples(file_dir):
             if os.path.splitext(file)[1] == '.bmp':
                 L.append(os.path.join(root,file))
     for filename in L:
-        #print('filename = ',filename)
         src = cv2.imread(filename,cv2.IMREAD_GRAYSCALE)
         imgs.append(src)
     return imgs
 
-# 计算HOG特征
-def computeHOGs(pos_elements_path):
-    gray_image_list = get_samples(pos_elements_path)
-    hist_list = []
-    for cur_gray_image in gray_image_list:
-        winSize = (24,32)
-        blockSize = (8,8)
-        blockStride = (4,4)
-        cellSize = (4,4)
-        nbins = 9
-        hog = cv2.HOGDescriptor(winSize, blockSize, blockStride, cellSize, nbins)
-        # compute
-        winStride = (4,4)
-        padding = (0,0)
-        hist = hog.compute(cur_gray_image, winStride, padding)
-        hist_list.append(hist)
-    count = len(hist_list)
-    return count, hist_list
 
-def get_svm_detector(svm):
-    sv = svm.getSupportVectors()
-    rho, _, _ = svm.getDecisionFunction(0)
-    sv = np.transpose(sv)
-    return np.append(sv, [[-rho]], 0)
 
 

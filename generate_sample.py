@@ -2,7 +2,7 @@
 import cv2
 import numpy as np
 import random
-import IMP_SD
+import general_imp_func
 
 
 if __name__ == "__main__":

@@ -1,6 +1,33 @@
 import cv2
 import numpy as np
-from IMP_SD import computeHOGs,get_svm_detector
+from general_imp_func import get_samples
+
+# ========================
+# 在指定路径中计算HOG特征
+# ========================
+def computeHOGs(pos_elements_path):
+    gray_image_list = get_samples(pos_elements_path)
+    hist_list = []
+    for cur_gray_image in gray_image_list:
+        winSize = (24,32)
+        blockSize = (8,8)
+        blockStride = (4,4)
+        cellSize = (4,4)
+        nbins = 9
+        hog = cv2.HOGDescriptor(winSize, blockSize, blockStride, cellSize, nbins)
+        # compute
+        winStride = (4,4)
+        padding = (0,0)
+        hist = hog.compute(cur_gray_image, winStride, padding)
+        hist_list.append(hist)
+    count = len(hist_list)
+    return count, hist_list
+
+def get_svm_detector(svm):
+    sv = svm.getSupportVectors()
+    rho, _, _ = svm.getDecisionFunction(0)
+    sv = np.transpose(sv)
+    return np.append(sv, [[-rho]], 0)
 
 
 if __name__ == '__main__':

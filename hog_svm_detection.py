@@ -1,7 +1,6 @@
 import cv2
 import numpy as np
 from general_imp_func import get_samples
-from general_imp_func import GetFileName_FromPath
 
 # ========================
 # 在指定路径中计算HOG特征
@@ -32,8 +31,7 @@ def get_svm_detector(svm):
 
 
 if __name__ == '__main__':
-
-   # 第一步计算HOG特征
+    # 第一步计算HOG特征
     gradien_list = []
     labels = []
     hard_neg_list = []
@@ -75,31 +73,29 @@ if __name__ == '__main__':
     hog.setSVMDetector(get_svm_detector(svm))
 
     # 直接测试
-    img_List =  GetFileName_FromPath('C:\\Users\\sunlj4\\Desktop\\W1234')
-    for cur_path in img_List:
-        cur_image = cv2.imread(cur_path, cv2.IMREAD_GRAYSCALE)
-        # 选择ROI
-        x = 560
-        y = 432
-        height = 216
-        width = 800
-        ROI = cur_image[x:x + height, y:y + width]
-        # 用自适应阈值方法
-        constValue = 8
-        blockSize = 13
-        maxVal = 255
-        adaptiveMethod = 0
-        thresholdType = 1
-        auto_thre_Image = cv2.adaptiveThreshold(ROI, maxVal, adaptiveMethod, thresholdType, blockSize, constValue)
-        thre_img_inv = cv2.bitwise_not(auto_thre_Image)
-        cv2.imshow('auto_thre_Image', auto_thre_Image)
-        cv2.waitKey(0)
-        # 寻找区域
-        rects, wei = hog.detectMultiScale(auto_thre_Image, winStride = (4, 4), padding = (0, 0), scale = 1.05)
-        for (x, y, w, h) in rects:
-            cv2.rectangle(ROI, (x, y), (x + w, y + h), (0, 0, 255), 2)
-        cv2.imshow('a', ROI)
-        cv2.waitKey(0)
+    img = cv2.imread('C:\\Users\\sunlj4\\Desktop\\OCR_Project_HOG+SVM\\958.bmp', cv2.IMREAD_GRAYSCALE)
+    # 选择ROI
+    x = 560
+    y = 432
+    height = 216
+    width = 800
+    ROI = img[x:x + height, y:y + width]
+    # 用自适应阈值方法
+    constValue = 8
+    blockSize = 13
+    maxVal = 255
+    adaptiveMethod = 0
+    thresholdType = 1
+    auto_thre_Image = cv2.adaptiveThreshold(ROI, maxVal, adaptiveMethod, thresholdType, blockSize, constValue)
+    thre_img_inv = cv2.bitwise_not(auto_thre_Image)
+    cv2.imshow('auto_thre_Image', auto_thre_Image)
+    cv2.waitKey(0)
+    # 寻找区域
+    rects, wei = hog.detectMultiScale(auto_thre_Image, winStride = (4, 4), padding = (0, 0), scale = 1.05)
+    for (x, y, w, h) in rects:
+        cv2.rectangle(ROI, (x, y), (x + w, y + h), (0, 0, 255), 2)
+    cv2.imshow('a', ROI)
+    cv2.waitKey(0)
 
     debug = 9
 

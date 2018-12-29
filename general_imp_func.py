@@ -60,7 +60,7 @@ def get_samples(file_dir):
             if os.path.splitext(file)[1] == '.bmp':
                 L.append(os.path.join(root,file))
     for filename in L:
-        src = cv2.imread(filename, cv2.IMREAD_GRAYSCALE)
+        src = cv2.imread(filename,cv2.IMREAD_GRAYSCALE)
         imgs.append(src)
     return imgs
 

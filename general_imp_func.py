@@ -34,7 +34,12 @@ def load_txt_info(dirname):
         f.writelines(content)
     f.close()
 
-def file_name(file_dir):
+# =================================================
+# 加载样本，file_dir文件夹中".bmp"文件路径至List中
+# input : file_dir
+# output :
+# =================================================
+def GetFileName_FromPath(file_dir):
     L=[]
     for root, dirs, files in os.walk(file_dir):
         for file in files:
@@ -55,7 +60,7 @@ def get_samples(file_dir):
             if os.path.splitext(file)[1] == '.bmp':
                 L.append(os.path.join(root,file))
     for filename in L:
-        src = cv2.imread(filename,cv2.IMREAD_GRAYSCALE)
+        src = cv2.imread(filename, cv2.IMREAD_GRAYSCALE)
         imgs.append(src)
     return imgs
 

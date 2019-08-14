@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8fc2fa5c-02b1-4043-8b88-24f57c79a8ba" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/general_imp_func.py" beforeDir="false" afterPath="$PROJECT_DIR$/general_imp_func.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/test.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -48,8 +48,8 @@
       <file leaf-file-name="test.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/test.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="384">
-              <caret line="18" selection-start-line="18" selection-end-line="18" />
+            <state relative-caret-position="96">
+              <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
               <folding>
                 <element signature="e#0#10#0" expanded="true" />
               </folding>
@@ -79,7 +79,7 @@
   <component name="NodePackageJsonFileManager">
     <packageJsonPaths />
   </component>
-  <component name="ProjectFrameBounds" extendedState="1">
+  <component name="ProjectFrameBounds">
     <option name="x" value="250" />
     <option name="y" value="141" />
     <option name="width" value="1476" />
@@ -208,7 +208,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="250" y="141" width="1476" height="889" extended-state="1" />
+    <frame x="250" y="141" width="1476" height="889" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -218,7 +218,7 @@
       <window_info anchor="bottom" id="Python Console" order="7" />
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="bottom" id="Terminal" order="7" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2242857" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2242857" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="3" />
       <window_info anchor="right" id="SciView" order="3" weight="0.51827955" />
@@ -249,12 +249,12 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/test.py</url>
-          <line>7</line>
+          <line>8</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/test.py</url>
-          <line>30</line>
+          <line>33</line>
           <option name="timeStamp" value="3" />
         </line-breakpoint>
       </breakpoints>
@@ -330,8 +330,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/test.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="384">
-          <caret line="18" selection-start-line="18" selection-end-line="18" />
+        <state relative-caret-position="96">
+          <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
           <folding>
             <element signature="e#0#10#0" expanded="true" />
           </folding>
